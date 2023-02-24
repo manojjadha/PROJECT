@@ -2,9 +2,12 @@ package com.MyConnect.Automation;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.RemoteWebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import okio.ByteString;
 
@@ -12,6 +15,7 @@ import okio.ByteString;
 
 public class BrowserLoad {
 	private static final String TimeUnit = null;
+	private static final String ExpectedCondition = null;
 	private static WebElement forgotpasswordLink;
 	WebDriver driver;
 
@@ -58,6 +62,28 @@ public class BrowserLoad {
             	//access the email acount and click on the password reset on the "submitButton"
             	// verify that the password has been successfully change and the user is redirect to the login page 
             	String expecturl =" https://myconnectv1.tinggit.com/";
+            	//set the driver path
+            	
+            	
+            	System.setProperty("webdriver.chrome.driver","C:\\Users\\THP\\Downloads\\chromedriver_win32 (1)\\chromedriver.exe");
+            	//Create an instance of chromedriver
+            	WebDriver driver1 = new ChromeDriver();
+            	// Navigate to the URL where you icon is present
+            	driver.get("https://myconnectv1.tinggit.com/");
+            	//identify the connect icon element
+            	WebElement connecticon = driver.findElement(By.id("connect-icon"));
+            	// click on the connect icon
+            	connecticon.click();
+            	//wait for page to redirection
+            	WebDriverWait wait = new WebDriverWait(driver,10);
+            	wait.until(ExpectedConditions.urlContains("connect-page"));
+            	//verify that webpage has been loaded after redirection
+            	String currenturl = driver.getCurrentUrl();
+            	if (currenturl.contains("connect-webpage")) {
+            		
+            	}
+            	
+        		
             	
             	
             	
