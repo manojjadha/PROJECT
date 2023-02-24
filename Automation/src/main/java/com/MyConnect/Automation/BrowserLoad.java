@@ -26,7 +26,7 @@ public class BrowserLoad {
 			WebDriver driver = new ChromeDriver();
 			
 			driver.get("https://myconnectv1.tinggit.com/");
-			
+			System.out.println("file got change");
 			
 			// Find the username and password in the login field them in
 			WebElement usernameField = driver.findElement(By.id("username"));
