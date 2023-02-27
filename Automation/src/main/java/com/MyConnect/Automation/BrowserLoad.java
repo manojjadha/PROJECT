@@ -21,12 +21,12 @@ public class BrowserLoad {
 
 	public static void main(String[] args) {
 	
-		System.setProperty("webdriver.chrome.driver","C:\\Users\\THP\\Downloads\\chromedriver_win32 (1)\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver","C:\\Users\\THP\\Downloads\\chromedriver_win32 (1)\\chromedriver.exe\\");
 		
-			WebDriver driver = new ChromeDriver();
+			ChromeDriver driver = new ChromeDriver();
 			
 			driver.get("https://myconnectv1.tinggit.com/");
-			System.out.println("file got change");
+		
 			
 			// Find the username and password in the login field them in
 			WebElement usernameField = driver.findElement(By.id("username"));
